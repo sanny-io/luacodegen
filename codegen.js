@@ -161,7 +161,7 @@ const nodeHandlers = {
     return node.raw;
   },
   Chunk(node) {
-    return [...node.comments.map(gen), ...node.body.map(gen)].join("\n");
+    return [...(node.comments || []).map(gen), ...node.body.map(gen)].join("\n");
   }
 };
 
